@@ -4,3 +4,16 @@ table, th, td {
     border-radius: 10px;
     margin-left: 10px;
 }
+
+#table1{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+
+}
+
+tr{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
