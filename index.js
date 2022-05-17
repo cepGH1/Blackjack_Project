@@ -6,9 +6,14 @@ const totalHeld = document.querySelector("#total-held");
 const drawButton = document.querySelector("#save-button");
 const testDiv = document.querySelector("#test");
 const startButton = document.querySelector("#start-button");
+const restartButton = document.querySelector("#restart-button");
 
-startButton.addEventListener("click", start);
+
 drawButton.addEventListener("click", render);
+//startButton.addEventListener("click", start);
+//but1.addEventListener("click", render);
+restartButton.addEventListener("click", refresh);
+
 let handValues =[];
 let total = 0;
 
@@ -17,16 +22,15 @@ function render() {
    let value = Math.floor((Math.random() * 13) + 1);
 
    let output = "number is " + value;
-   alert(output);
 
    
    handValues.push(value);
    total = total + value;
    if(total >21){
-       totalHeld.innerHTML = "Bust";
+       totalHeld.innerHTML = "You've gone Bust";
    }
    else{
-   totalHeld.innerHTML = total;
+   totalHeld.innerHTML = "Your hand total is : " + total;
    }
    
         let newRow = document.createElement("tr");
@@ -56,15 +60,28 @@ function totalInHand(){
     totalHeld.value = total;
 }
 
+function refresh(){
+
+    window.location.reload();
+
+}
 function restart(){
 
 }
 
 function start(){
-    let but1 = document.createElement("button");
+    but1 = document.createElement("button");
     let buttonMessage1 = document.createTextNode("draw");
     but1.appendChild(buttonMessage1);
-    divTest.innerHTML = "hello world";
+    testDiv.appendChild(but1);
+    let but2 = document.createElement("button");
+    let buttonMessage2 = document.createTextNode("stick");
+    but2.appendChild(buttonMessage2);
+    testDiv.appendChild(but2);
+    let but3 = document.createElement("button");
+    let buttonMessage3 = document.createTextNode("redeal");
+    but3.appendChild(buttonMessage3);
+    testDiv.appendChild(but3);
 }
 
 /*blackjack logic
